@@ -22,7 +22,7 @@ class ReadWrite {
 
   }
 
-  def apend(fileName: String, content: String) {
+  def append(fileName: String, content: String) {
 
     val file = new File(fileName)
     val pw = new FileWriter(file, true)

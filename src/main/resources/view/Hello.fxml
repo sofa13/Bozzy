@@ -5,10 +5,16 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HelloController">
    <center>
-      <Button mnemonicParsing="false" onAction="#handleButtonPress" text="Click me!" BorderPane.alignment="CENTER" />
+      <FlowPane BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleButtonPress" text="Click me!" />
+            <Button mnemonicParsing="false" onAction="#handleReadButton" text="Read File" />
+         </children>
+      </FlowPane>
    </center>
    <top>
       <MenuBar BorderPane.alignment="CENTER">
