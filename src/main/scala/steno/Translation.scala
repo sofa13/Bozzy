@@ -5,8 +5,14 @@ package steno
   */
 class Translation(entry: String, format: DictionaryFormat.Value)  {
   val raw = if (format == DictionaryFormat.JSON) {
-    "convention"
+    val stroke = """"([^"]+)": "(.*)",?\w*$""".r
+    entry match {
+      case stroke(rawStroke, rawTranslation) => rawTranslation
+    }
   } else if (format == DictionaryFormat.RTF) {
-    "convention"
+    val stroke = """\{\\\*\\cxs ([^}]+)\}([^{]+).*$""".r
+    entry match {
+      case stroke(rawStroke, rawTranslation) => rawTranslation
+    }
   }
 }
